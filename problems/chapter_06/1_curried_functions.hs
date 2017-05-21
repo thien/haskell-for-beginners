@@ -2,18 +2,21 @@
 -- to express the curried nature of the functions used,
 -- but preserve the functions' behavior.
 
-abc = take 3 "abcdefg"
-triples = zip3 "abc" [1,2,3] [10.0, 12.0, 14.0]
-ten = (*) 5 2
-ten' = 5 * 2
+
+abc = (take 3) "abcdefg"
+triples = ((zip3 "abc") [1,2,3]) [10.0, 12.0, 14.0]
+ten = ((*) 5) 2
+ten' =( 5 *) 2
 
 
 -- Add type declarations to the following functions.
 -- Use parentheses to explicitly express the curried
 -- nature of the functions.
 
-and a b = a && b
+and' :: Bool -> Bool -> Bool
+and' a b = a && b
 
+volume:: Double -> Double -> Double -> Double
 volume a b c = a * b * c
 
 addition = (+)
