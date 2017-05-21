@@ -14,5 +14,8 @@
 --        *inside* your case experesion.
 
 greeting :: String -> String
-greeting name = undefined
+greeting name 
+        | name == "Bob"   = "fuck off bob"
+        | (head name) == 'q' = "suk ur mum " ++ name
+        | (length name) <= 3 = "get a real name"
 

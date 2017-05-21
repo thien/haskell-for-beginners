@@ -4,14 +4,18 @@
 -- that will allow the definition to work for the most
 -- types by using Type Classes.
 
+increment :: Int -> Int
 increment x = x + 1
 
+removeAll :: Int -> [Int] -> [Int]
 removeAll badX xs = [ x | x <- xs, x /= badX ]
 
+sortPair :: (Int, Int) -> (Int, Int)
 sortPair pair = if fst pair <= snd pair
                 then pair
                 else (snd pair, fst pair)
 
+one :: Char
 one = read "1"
 
 -- Define pi in several different ways by converting the

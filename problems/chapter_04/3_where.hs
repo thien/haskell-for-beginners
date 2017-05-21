@@ -4,7 +4,8 @@
 --    (be sure to use where to make your function
 --     more readable)
 bigTriangle :: Float -> Float -> Bool
-bigTriangle length width = undefined
+bigTriangle length width = if hypo > 10 then True else False 
+                            where hypo = sqrt (length*length + width*width)
 
 -- Write a function that classifies rectangles
 -- into at least 5 size categories based their
