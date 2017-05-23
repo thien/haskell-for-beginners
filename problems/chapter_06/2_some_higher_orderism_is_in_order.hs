@@ -5,15 +5,20 @@
 -- Define a function that applies another function
 -- to each element of a pair.
 
-fifty :: (t -> t1) -> t -> t1
-fifty f x = f x
+fifty :: (a -> b) -> (a,a) -> (b,b)
+fifty f (x, y) = (f x, f y)
+
+primes :: [Int] 
+primes = foo [2..]
+foo :: [Int] -> [Int]
+foo (x:xs) = x : foo [p | p <- xs, p `mod` x /= 0]
 
 -- Use your function above to write a function
 -- that scales (multiplies) a pair by a given
 -- factor.
 
-scale :: Double -> Double -> Double
-scale x y = fifty (*) x y
+scale :: Num a => a -> (a,a) -> (a,a)
+scale x = fifty (x*)
 
 -- Define a function that applies a function to
 -- each element of a list.

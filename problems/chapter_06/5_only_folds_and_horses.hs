@@ -2,7 +2,7 @@
 
 -- Define a function that determines to total area of a list of rectangles
 totalArea :: (Num a) => [(a,a)] -> a
-totalArea = undefined
+totalArea li = foldl (+) li
 
 -- Define a function that finds the dimensions of a rectangle that will
 -- encompass every rectangle in a list (individually, not at all the same
